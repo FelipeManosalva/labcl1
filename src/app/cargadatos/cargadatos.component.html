@@ -1,0 +1,201 @@
+<div  id="modalBook" class="modal fade bordes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Datos Cuenta Ficha: {{cuenta.nro_fi}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-book" #formBook="ngForm" >
+         <ul class="nav nav-tabs" id="tabContent">
+           <li><a href="#TABUNO" data-toggle="tab">SICBO</a></li>
+           <li><a href="#TABDOS" data-toggle="tab">COBRALEX</a></li>
+           <li><a href="#TABCUATRO" data-toggle="tab">COBRALEX HISTORICO</a></li>
+           <li><a href="#TABTRES" data-toggle="tab">SICBO +</a></li>
+         </ul>
+         <div class="tab-content">
+          <div class="tab-pane active" id="TABUNO">
+            <div class="form-row" >
+              <div class="form-group col-md-5">
+                <label for="date">NOMBRE PACIENTE</label>
+                <input type="text" id="date" name="date" class="form-control" placeholder="Titulo" value={{cuenta.nombre_paciente}} readonly="readonly" > 
+              </div>
+              <div class="form-group col-md-5">
+                <label for="extra">NOMBRE RESPONSABLE</label>
+                <input type="text" id="title" name="title" class="form-control" placeholder="title" value={{cuenta.responsable}}  readonly="readonly">
+              </div>
+              <div class="form-group col-md-2">
+                <label for="extra">ESTADO:</label>
+                <input type="text" id="title" name="title" class="form-control" placeholder="title" value={{cuenta.estado}}  readonly="readonly">
+              </div>
+             </div>
+            <div class="form-row">
+              
+              <div class="form-group col-md-6">
+                <label for="extra">CONTACTOS</label>
+                <textarea name="descripcion" id="descripcion" class="form-control" cols="20" rows="2" >{{cuenta.contacto}}</textarea>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="extra">SALDO CUENTA</label>
+                <input type="text" id="title" name="title" class="form-control" placeholder="title"  readonly="readonly" [ngModel]="cuenta.saldo | puntos">
+              </div>
+            </div>
+            <div class="form-group" >
+                <label for="descripcion">HISTORIAL CUENTA:</label>
+                <textarea name="descripcion" id="descripcion" class="form-control textsmall" cols="50" rows="6" >{{cuenta.historial}}</textarea>
+              </div>
+          </div>
+          <div class="tab-pane" id="TABDOS">
+
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <div class="form-group">
+                  <label for="date">FECHA INGRESO</label>
+                  <input type="text" id="date" name="date" class="form-control" placeholder="Titulo"  readonly="readonly" value="{{cuentacobralex.fecha_ingreso}}">
+                </div>
+                
+              </div>
+              <div class="form-group col-md-3">
+                <div class="form-group">
+                  <label for="date">FECHA ULTIMA GESTION</label>
+                  <input type="text" id="date" name="date" class="form-control" placeholder="Titulo"  readonly="readonly" value="{{cuentacobralex.fecha_ultima_gestion}}">
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <div class="form-group">
+                  <label for="date">USUARIO ULTIMA GESTION</label>
+                  <input type="text" id="date" name="date" class="form-control" placeholder="Titulo"  readonly="readonly" value="{{cuentacobralex.usuario_gestion}}">
+                </div>
+              </div>
+              
+            </div>
+            <div class="form-group" >
+                <label for="descripcion">ULTIMA GESTION:</label>
+                <textarea name="descripcion" id="descripcion" class="form-control" cols="50" rows="6" >{{cuentacobralex.ultima_gestion}}</textarea>
+              </div>
+              <div class="form-group" >
+                <label for="descripcion">FECHA ULTIMO COMPROMISO:</label>
+                <input type="text" id="date" name="date" class="form-control" placeholder="Titulo"  readonly="readonly" value="{{cuentacobralex.fec_ult_compromiso}}">
+              </div>
+          </div> 
+          <div class="tab-pane" id="TABTRES">
+            <div class="form-group">
+              <label for="date">Fecha</label>
+              <input type="text" id="date" name="date" class="form-control" placeholder="Titulo"  readonly="readonly">
+            </div>
+          </div>
+          <div class="tab-pane" id="TABCUATRO">
+            
+            <div class="form-group">
+              <label for="descripcion">GESTIONES EN COBRALEX</label>
+               <div *ngFor="let item of cuentascobralex;"> 
+                <textarea name="descripcion" id="descripcion" class="form-control" cols="50" rows="1" value="{{item.ultima_gestion}}"  ></textarea>
+               </div>
+               
+            </div>
+          <!--
+          <div class="container">
+            <h2>Basic List Group</h2>
+            <ul class="list-group">
+              <li class="list-group-item">First item</li>
+              <li class="list-group-item">Second item</li>
+              <li class="list-group-item">Third item</li>
+            </ul>
+          </div> -->
+
+          </div>
+            <div class="form-row ult_linea">
+              <div class="form-group col-md-6">
+                <label for="extra">ACCION</label>
+                
+                <select class="form-control" id="estado"  [(ngModel)]="accion" name="accion">
+                  <option value="1">LLAMADO TELEFONICO</option>
+                  <option value="2">NOTIFICACION</option>
+                  <option value="3">BLOQUEO RUT</option>
+                  <option value="4">CARTA PEJUDICIAL</option>
+                </select>
+                
+              </div>
+              <div class="form-group col-md-6">
+                <label for="extra">OBSERVACION</label>
+                <textarea name="observacion" id="observacion" [(ngModel)]="observacion" class="form-control" cols="20" rows="2" ></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary float-right" (click)="guardagestion()">Guardar cambios</button>
+              </div>
+            </div>
+         </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div  id="modalBook" class="modal fade bordes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Datos Cuenta Ficha: {{cuenta.nro_fi}} - Saldo: {{cuenta.saldo}} - Estado: {{cuenta.estado}} </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="form-book" #formBook="ngForm" >
+            <div class="form-group">
+              <label for="date">NOMBRE PACIENTE {{cuenta.nro_fi}} - {{asinc}}</label>
+              <input type="text" id="date" name="date" class="form-control" placeholder="Titulo" value={{paciente}} readonly="readonly" > 
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="extra">NOMBRE RESPONSABLE</label>
+                <input type="text" id="title" name="title" class="form-control" placeholder="title" value={{responsable}}  readonly="readonly">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="extra">CONTACTOS</label>
+                <textarea name="descripcion" id="descripcion" class="form-control" cols="20" rows="2" >{{contacto}}</textarea>
+              </div>
+            </div>
+            <div class="form-group" >
+                <label for="descripcion">HISTORIAL CUENTA:</label>
+                <textarea name="descripcion" id="descripcion" class="form-control" cols="50" rows="6" >
+                  
+                  <ul >
+                  <li>{{cuentacobralex.fecha_ingreso}}</li>
+                  </ul>
+                </textarea>
+              </div>
+
+
+              <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="extra">ACCION</label>
+                
+                <select class="form-control" id="estado" >
+                  <option value="estado 1">LLAMADO TELEFONICO</option>
+                  <option value="estado 2">NOTIFICACION</option>
+                  <option value="estado 3">BLOQUEO RUT</option>
+                  <option value="estado 4">CARTA PEJUDICIAL</option>
+                </select>
+                
+              </div>
+              <div class="form-group col-md-6">
+                <label for="extra">OBSERVACION</label>
+                <textarea name="descripcion" id="descripcion" class="form-control" cols="20" rows="2" ></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary float-right">Guardar cambios</button>
+              </div>
+            </div>
+
+
+              
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
+

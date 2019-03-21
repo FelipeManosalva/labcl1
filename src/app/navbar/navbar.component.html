@@ -1,0 +1,48 @@
+
+<div *ngIf="logged()">
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-info navbar fixed-top">
+    <a class="navbar-brand" href="www.clinicaalemanaosorno.cl/wps/index.php/en/"><img src="/assets/img/navbar.png"/> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown" >
+          <a id="blanco" class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Información para Pacientes
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+            <a id="gris" class="dropdown-item" [routerLink]="['rutita']"   >Presupuestos<span class="glyphicon glyphicon-menu-right"></span></a>
+            <a id="gris" class="dropdown-item"  [routerLink]="['panel']">Resultados de Exámenes</a>
+            <a id="gris" class="dropdown-item"  href="www.clinicaalemanaosorno.cl/wps/index.php/en/homepage/aranceles.html">Aranceles Clínica Alemana</a>
+            <a id="gris" class="dropdown-item"  href="www.clinicaalemanaosorno.cl/wps/index.php/en/homepage/fotografias-recien-nacido.html">Fotografías Recién Nacidos</a>
+            <a id="gris" class="dropdown-item"  href="http://www.clinicaalemanaosorno.cl/wps/index.php/en/homepage/atencion-socios.html">Atención Socios</a>
+            <a id="gris" class="dropdown-item"  href="http://www.clinicaalemanaosorno.cl/wps/index.php/en/homepage/convenios.html">Convenios</a>
+            <a id="gris" class="dropdown-item"  href="http://www.clinicaalemanaosorno.cl/wps/index.php/en/homepage/admision.html">Admisión</a>
+            <a id="gris" class="dropdown-item"  href="www.clinicaalemanaosorno.cl/wps/derechos.pdf">Derechos y Deberes de los Pacientes</a>
+            <a id="gris" class="dropdown-item"  href="http://www.clinicaalemanaosorno.cl/reglamento.pdf">Reglamento Interno Clínico</a>
+            <a id="gris" class="dropdown-item"  href="http://www.clinicaalemanaosorno.cl/wps/index.php/en/homepage/buscador.html">Buscador</a>
+            <a id="gris" class="dropdown-item"  href="http://www.clinicaalemanaosorno.cl/wps/index.php/en/homepage/medicos_me.html">Solo para Médicos</a>
+            <a id="gris" class="dropdown-item"  href="#">Centros Médicos</a>
+            <a id="gris" class="dropdown-item"  href="#">Listado Profesionales</a>
+            <a id="gris" class="dropdown-item"  href="http://www.clinicaalemanaosorno.cl/wps/index.php/en/homepage/destacados-del-mes.html">Destacados del mes</a>
+            <a id="gris" class="dropdown-item"  href="http://www.clinicaalemanaosorno.cl/wps/index.php/en/quienes-somos-centro.html">Centro de extensión</a>            
+          </div>
+          </li>
+            <li class="nav-item">
+              <a class="nav-link " id="blanco" href="http://www.clinicaalemanaosorno.cl/wps/index.php/en/medicos.html">Busqueda de Especialistas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="blanco" href="http://www.clinicaalemanaosorno.cl/wps/index.php/en/servicios.html">Unidades y Centros Medicos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="blanco" href="http://www.clinicaalemanaosorno.cl/wps/index.php/en/telefonos.html">Directorio Telefónico</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="blanco" href="#" (click)="salir()">Salir</a>
+            </li>
+      </ul>
+    </div>
+  </nav>
+</div>

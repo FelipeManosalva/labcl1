@@ -1,0 +1,34 @@
+.bordes
+{
+  border-radius: 20px ;
+}
+.modal-content {
+    background-color: rgb(185, 211, 255);
+  }
+  .modal-header {
+    background-color: rgb(185, 211, 255);
+  }
+  .modal-body {
+    background-color: rgb(185, 211, 255);
+}
+.ult_linea {
+  background-color: rgb(237,237,85);
+}
+
+li{
+     list-style-type: none;
+    float: left;
+    text-align: center;
+    margin: 0px 2px -2px -0px;
+    background: rgb(181, 205, 255);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 2px solid rgb(0, 0, 0);
+    border-bottom: rgb(94, 134, 245);
+    padding: 0px 20px 0px 20px;
+}
+.textsmall{
+  font-family: verdana;
+  font-size: 8pt;
+  font-weight: bold;
+}

@@ -1,0 +1,31 @@
+.no-data-available {
+  text-align: center;
+}
+
+/*
+   src/styles.css (i.e. your global style)
+*/
+.dataTables_empty {
+  display: none;
+}
+
+.container
+{
+  max-width: 100%;
+}
+#a{
+height: 100%;
+width: 100%;   
+position: relative;
+overflow: hidden;
+}
+#bordes
+{
+  border-radius: 40px ;
+}
+.opacity{
+  background-color: rgba(255, 255, 255,0.6);  
+  width: 100% !important;  
+  margin: 0 !important;
+  padding: 20px !important;
+}

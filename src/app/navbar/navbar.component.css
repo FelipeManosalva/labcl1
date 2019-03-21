@@ -1,0 +1,12 @@
+#blanco{
+    color: rgb(255, 255, 255);
+    font-weight: 200;  
+}
+
+#gris{
+    color: rgb(88, 88, 88);  
+    font-weight: 200; 
+}
+nav.navbar {
+    background-color: rgb(93, 154, 224);
+}
