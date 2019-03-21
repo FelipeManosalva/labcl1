@@ -91,7 +91,7 @@
             <div class="form-group">
               <label for="descripcion">GESTIONES EN COBRALEX</label>
                <div *ngFor="let item of cuentascobralex"> 
-                <textarea  name="descripcion" id="descripcion" class="form-control textsmall" cols="50" rows="2" > {{item.usuario_gestion}} GESTIONO LA CUENTA {{cuenta.nro_fi}} Y SE RECOPILO {{item.ultima_gestion}}.  CON FECHA  {{item.fecha_ultima_gestion}}  </textarea>
+                <textarea  name="descripcion" id="descripcion" class="form-control textsmall" cols="50" rows="2" readonly="readonly" > {{item.usuario_gestion}} GESTIONO LA CUENTA {{cuenta.nro_fi}} Y SE RECOPILO {{item.ultima_gestion}}.  CON FECHA  {{item.fecha_ultima_gestion}}  </textarea>
                </div>
                
             </div>
