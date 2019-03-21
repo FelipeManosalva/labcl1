@@ -73,7 +73,7 @@
             </div>
             <div class="form-group" >
                 <label for="descripcion">ULTIMA GESTION:</label>
-                <textarea name="descripcion" id="descripcion" class="form-control" cols="50" rows="6" >{{cuentacobralex.ultima_gestion}}</textarea>
+                <textarea name="descripcion" id="descripcion" class="form-control" cols="50" rows="6"  >{{cuentacobralex.ultima_gestion}}</textarea>
               </div>
               <div class="form-group" >
                 <label for="descripcion">FECHA ULTIMO COMPROMISO:</label>
@@ -90,8 +90,8 @@
             
             <div class="form-group">
               <label for="descripcion">GESTIONES EN COBRALEX</label>
-               <div *ngFor="let item of cuentascobralex;"> 
-                <textarea name="descripcion" id="descripcion" class="form-control" cols="50" rows="1" value="{{item.ultima_gestion}}"  ></textarea>
+               <div *ngFor="let item of cuentascobralex"> 
+                <textarea  name="descripcion" id="descripcion" class="form-control textsmall" cols="50" rows="2" > {{item.usuario_gestion}} GESTIONO LA CUENTA {{cuenta.nro_fi}} Y SE RECOPILO {{item.ultima_gestion}}.  CON FECHA  {{item.fecha_ultima_gestion}}  </textarea>
                </div>
                
             </div>

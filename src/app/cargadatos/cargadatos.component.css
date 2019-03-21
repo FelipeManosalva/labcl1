@@ -32,3 +32,6 @@ li{
   font-size: 8pt;
   font-weight: bold;
 }
+textarea{
+  resize: none;
+}
